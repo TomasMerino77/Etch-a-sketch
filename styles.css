@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    gap: 16px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+}
+
+#container div {
+    height: 60px;
+    width: 60px;
+    background-color: darkgray;
+}
