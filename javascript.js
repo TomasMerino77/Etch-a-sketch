@@ -25,7 +25,7 @@ sizeButton.addEventListener("click", () => {
     //Choose the size
     let boardSize = prompt("Select the size of the board. Enter a number between 2 and 100");
     if (boardSize === null) return;
-    while (isNaN(boardSize) || boardSize < 2 || boardSize > 100) { //TODO ESC to cancel and leave as it is rn
+    while (isNaN(boardSize) || boardSize < 2 || boardSize > 100) { 
         boardSize = prompt("Incorrect imput, select a value between 2 and 100")
         if (boardSize === null) return;
     }
@@ -40,5 +40,12 @@ sizeButton.addEventListener("click", () => {
     square.forEach((sqr) => {
         sqr.style.width = `${sqrSize}px`;
         sqr.style.height = `${sqrSize}px`;
+    })
+});
+
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", () => {
+    square.forEach((sqr) => {
+        sqr.style.backgroundColor = "darkgray";
     })
 });
