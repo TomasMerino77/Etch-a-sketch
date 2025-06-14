@@ -30,9 +30,7 @@ sizeButton.addEventListener("click", () => {
         if (boardSize === null) return;
     }
     //Eliminates the old board
-    square.forEach((sqr) => {
-        container.removeChild(sqr);
-    });
+    container.innerHTML = "";
     //Calls the function Grid with the new size
     Grid(boardSize);
     //Changes the size of the squares
