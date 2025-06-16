@@ -43,24 +43,18 @@ clearButton.addEventListener("click", () => {
 
 
 const optionsSelector = document.querySelector("#options");
-optionsSelector.addEventListener("change", () => {
-    const selectedValue = optionsSelector.value;
 
-    if (selectedValue === "solidColor") {
-        container.addEventListener("mouseover", (event) => {
-        if (event.target.classList.contains("square")) {
+container.addEventListener("mouseover", (event) => {
+    if (event.target.classList.contains("square")) {
+        if (optionsSelector.value === "solidColor") {
             event.target.style.backgroundColor = "blue";
         }
-});
-    }
-    else if (selectedValue === "randomRGB") {
-        container.addEventListener("mouseover", (event) => {
-        if (event.target.classList.contains("square")) {
+        else if (optionsSelector.value === "randomRGB") {
             let R = Math.random() * 256;
             let G = Math.random() * 256;
             let B = Math.random() * 256;
             event.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
         }
-});
     }
+    
 });
