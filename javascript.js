@@ -13,13 +13,6 @@ function Grid(size = 16) {
 }
 Grid();
 
-
-container.addEventListener("mouseover", (event) => {
-    if (event.target.classList.contains("square")) {
-        event.target.style.backgroundColor = "blue";
-    }
-});
-
 const sizeButton = document.querySelector("#selector");
 sizeButton.addEventListener("click", () => {
     //Choose the size
@@ -46,4 +39,28 @@ clearButton.addEventListener("click", () => {
     square.forEach((sqr) => {
         sqr.style.backgroundColor = "darkgray";
     })
+});
+
+
+const optionsSelector = document.querySelector("#options");
+optionsSelector.addEventListener("change", () => {
+    const selectedValue = optionsSelector.value;
+
+    if (selectedValue === "solidColor") {
+        container.addEventListener("mouseover", (event) => {
+        if (event.target.classList.contains("square")) {
+            event.target.style.backgroundColor = "blue";
+        }
+});
+    }
+    else if (selectedValue === "randomRGB") {
+        container.addEventListener("mouseover", (event) => {
+        if (event.target.classList.contains("square")) {
+            let R = Math.random() * 256;
+            let G = Math.random() * 256;
+            let B = Math.random() * 256;
+            event.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+        }
+});
+    }
 });
